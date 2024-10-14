@@ -1,1 +1,0 @@
-tes satu dua tiga ris
