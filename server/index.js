@@ -1,7 +1,9 @@
 import express from "express";
+import "dotenv/config";
+import {db} from "./configs/db.js";
 
 const app = express(); //Library express initialized
-const PORT = 5000; 
+const PORT = process.env.PORT; 
 
 // route / path
 app.get("/", (req, res) => {
