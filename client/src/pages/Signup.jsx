@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -20,7 +21,7 @@ export default function Signup() {
     } = useForm();
 
     const doSubmit = async (values) => {
-        alert('Sign Up Successful. You are now logged in');
+        toast.success('Sign Up Successful. You are now logged in');
     };
 
     return (
@@ -42,7 +43,7 @@ export default function Signup() {
                 background: 'linear-gradient(to bottom, #d8e9f0, #0fa3e7)', // Gradien warna
             }}
         > */}
-            <Card className="p-5 w-75" style={{ borderRadius: '20px' }}>
+            <Card className="p-5 w-75 card">
                 <Row>
                     {/* Bagian Kiri */}
                     <Col md={6} className="text-center">
@@ -56,8 +57,8 @@ export default function Signup() {
                     </Col>
 
                     {/* Bagian Kanan */}
-                    <Col md={6}>
-                        <Form onSubmit={handleSubmit(doSubmit)} className="center">
+                    <Col md={6} >
+                        <Form onSubmit={handleSubmit(doSubmit)} className='text-center'>
                             <h1 className="mb-4">Daftar Akun 404</h1>
                             {/* Email Field */}
                             <FloatingLabel controlId="floatingInput" label="Email" className="mb-3">
@@ -116,7 +117,7 @@ export default function Signup() {
                                 id="agreementCheckbox"
                                 label={
                                     <span>
-                                        Saya menyetujui <a href="#" className="link-dark"><b>kebijakan privasi</b></a><br />404 Not Books
+                                        Saya menyetujui <a href="#" className="link-dark"><b>kebijakan privasi</b></a> 404 Not Books
                                     </span>
                                 }
                                 className="mb-3"
@@ -133,7 +134,6 @@ export default function Signup() {
                             >
                                 {isSubmitting ? 'Loading...' : 'Daftar'}
                             </Button>
-                            
                             <p className="mt-3 mb-5">
                                 Sudah Punya Akun? <a href="#" className="link-dark"><b>Masuk</b></a>
                             </p>
