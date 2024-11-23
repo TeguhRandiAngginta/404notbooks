@@ -24,8 +24,25 @@ export default function Signup() {
     };
 
     return (
-        <Container fluid className="d-flex justify-content-center align-items-center vh-100 container">
-            <Card className="p-5 w-75">
+        <Container
+            fluid
+            className="d-flex justify-content-center align-items-center"
+            style={{
+                minHeight: '100vh',
+                background: 'linear-gradient(135deg, #d8e9f0, #c3f0c8, #b5a3f3)', // Warna gradien
+                padding: '20px',
+            }}
+        >
+            {/* </Container>
+        <Container
+            fluid
+            className="d-flex justify-content-center align-items-center"
+            style={{
+                minHeight: '100vh',
+                background: 'linear-gradient(to bottom, #d8e9f0, #0fa3e7)', // Gradien warna
+            }}
+        > */}
+            <Card className="p-5 w-75" style={{ borderRadius: '20px' }}>
                 <Row>
                     {/* Bagian Kiri */}
                     <Col md={6} className="text-center">
@@ -39,10 +56,9 @@ export default function Signup() {
                     </Col>
 
                     {/* Bagian Kanan */}
-                    <Col md={6}> 
-                        
-                        <Form onSubmit={handleSubmit(doSubmit)} className='center' >
-                        <h1 className="mb-4">Daftar Akun 404</h1>
+                    <Col md={6}>
+                        <Form onSubmit={handleSubmit(doSubmit)} className="center">
+                            <h1 className="mb-4">Daftar Akun 404</h1>
                             {/* Email Field */}
                             <FloatingLabel controlId="floatingInput" label="Email" className="mb-3">
                                 <Form.Control
@@ -117,7 +133,8 @@ export default function Signup() {
                             >
                                 {isSubmitting ? 'Loading...' : 'Daftar'}
                             </Button>
-                            <p className='mt-3 mb-5'>
+                            
+                            <p className="mt-3 mb-5">
                                 Sudah Punya Akun? <a href="#" className="link-dark"><b>Masuk</b></a>
                             </p>
                         </Form>
