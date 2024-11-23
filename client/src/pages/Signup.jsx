@@ -47,9 +47,9 @@ export default function Signup() {
                 <Row>
                     {/* Bagian Kiri */}
                     <Col md={6} className="text-center">
-                        <div className="d-flex justify-content-center align-items-center mb-3 mt-5">
-                            <Image src={logo} roundedCircle className="logo me-2" />
-                            <h2>Not Books</h2>
+                        <div className="d-flex justify-content-center align-items-center mb-3 mt-3">
+                            <Image src={logo} roundedCircle className="logo me-2 mb-2" />
+                            <h3 className='archivo'>Not Books</h3>
                         </div>
                         <div className="d-flex justify-content-center">
                             <Image src={img} rounded className="log1" />
@@ -59,7 +59,7 @@ export default function Signup() {
                     {/* Bagian Kanan */}
                     <Col md={6} >
                         <Form onSubmit={handleSubmit(doSubmit)} className='text-center'>
-                            <h1 className="mb-4">Daftar Akun 404</h1>
+                            <h2 className="mb-4 archivo">Daftar Akun 404</h2>
                             {/* Email Field */}
                             <FloatingLabel controlId="floatingInput" label="Email" className="mb-3">
                                 <Form.Control
@@ -116,7 +116,7 @@ export default function Signup() {
                                 type="checkbox"
                                 id="agreementCheckbox"
                                 label={
-                                    <span>
+                                    <span className='dm-sans'>
                                         Saya menyetujui <a href="#" className="link-dark"><b>kebijakan privasi</b></a> 404 Not Books
                                     </span>
                                 }
@@ -130,11 +130,11 @@ export default function Signup() {
                             <Button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="btn btn-info mt-2 wide-button"
+                                className="btn btn-info mt-2 wide-button dm-sans"
                             >
-                                {isSubmitting ? 'Loading...' : 'Daftar'}
+                                {isSubmitting ? 'Loading...' : <strong>Daftar</strong>}
                             </Button>
-                            <p className="mt-3 mb-5">
+                            <p className="mt-3 mb-5 dm-sans">
                                 Sudah Punya Akun? <a href="#" className="link-dark"><b>Masuk</b></a>
                             </p>
                         </Form>
