@@ -2,10 +2,21 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import './style.css';
 
 export default function PrivacyPolicy() {
     return (
-        <Container className="mt-5">
+        <Container
+            fluid
+            className="d-flex justify-content-center align-items-center"
+            style={{
+                minHeight: '100vh',
+                background: 'linear-gradient(135deg, #d8e9f0, #c3f0c8, #b5a3f3)', // Warna gradien
+                padding: '20px',
+            }}
+        >
+            <Card className="p-5 w-75 card">
             <Row>
                 <Col>
                     <h1>Kebijakan Privasi</h1>
@@ -57,6 +68,7 @@ export default function PrivacyPolicy() {
                     </p>
                 </Col>
             </Row>
+            </Card>
         </Container>
     );
-};
+}

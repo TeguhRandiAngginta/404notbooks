@@ -20,7 +20,7 @@ export default function Signup() {
         formState: { errors, isSubmitting },
     } = useForm();
 
-    const doSubmit = async (values) => {
+    const doSubmit = async () => {
         toast.success('Sign Up Successful. You are now logged in');
     };
 
@@ -34,15 +34,6 @@ export default function Signup() {
                 padding: '20px',
             }}
         >
-            {/* </Container>
-        <Container
-            fluid
-            className="d-flex justify-content-center align-items-center"
-            style={{
-                minHeight: '100vh',
-                background: 'linear-gradient(to bottom, #d8e9f0, #0fa3e7)', // Gradien warna
-            }}
-        > */}
             <Card className="p-5 w-75 card">
                 <Row>
                     {/* Bagian Kiri */}
