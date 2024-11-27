@@ -13,7 +13,7 @@ import img from '../assets/logo/log1.png';
 import { useForm } from 'react-hook-form';
 import './style.css'; // Import external CSS
 
-export default function Signin() {
+export default function ForgetPassword() {
     const {
         handleSubmit,
         register,
@@ -21,7 +21,7 @@ export default function Signin() {
     } = useForm();
 
     const doSubmit = async () => {
-        toast.success('Sign in Successful');
+        toast.success('Check Kotak Masuk Emailmu ');
     };
 
     return (
@@ -45,8 +45,12 @@ export default function Signin() {
                     {/* Right Side */}
                     <Col md={6} className="right-side">
                         <Form onSubmit={handleSubmit(doSubmit)} className="text-center">
-                            <h2 className="mb-4 archivo title-form align-title">Masuk Akun 404</h2>
-
+                            <h2 className="mb-4 archivo title-form align-title">Lupa Kata Sandi</h2>
+                            <div className='text-center'>
+                                <span className="dm-sans">
+                                    <p><b> Silahkan masukkan email yang sudah<br /> terdaftar, kami akan mengirimkan link<br/> untuk mengatur ulang kata sandimu</b></p>
+                                </span>
+                            </div>
                             {/* Email Field */}
                             <FloatingLabel controlId="floatingInput" label="Email" className="mb-3">
                                 <Form.Control
@@ -58,40 +62,13 @@ export default function Signin() {
                                     <Form.Text className="text-danger">{errors.email.message}</Form.Text>
                                 )}
                             </FloatingLabel>
-
-                            {/* Password Field */}
-                            <FloatingLabel controlId="floatingPassword" label="Kata Sandi">
-                                <Form.Control
-                                    type="password"
-                                    placeholder="Password"
-                                    className="mb-3"
-                                    {...register('password', { required: 'Masukkan Kata Sandi' })}
-                                />
-                                {errors.password && (
-                                    <Form.Text className="text-danger">{errors.password.message}</Form.Text>
-                                )}
-                            </FloatingLabel>
-                            <div className='text-end'>
-                            <span className="dm-sans">
-                                <a href="forget-password" className="link-dark">
-                                    <b> Lupa Password</b>
-                                </a>
-                            </span>
-                            </div>
-
                             <Button
                                 type="submit"
                                 disabled={isSubmitting}
                                 className="btn btn-info mt-2 wide-button dm-sans"
                             >
-                                {isSubmitting ? 'Loading...' : <strong>Masuk</strong>}
+                                {isSubmitting ? 'Loading...' : <strong>Kirim</strong>}
                             </Button>
-                            <p className="mt-3 mb-5 dm-sans">
-                                Belum Punya Akun?{' '}
-                                <a href="signup" className="link-dark">
-                                    <b>Daftar</b>
-                                </a>
-                            </p>
                         </Form>
                     </Col>
                 </Row>

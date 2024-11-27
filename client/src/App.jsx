@@ -4,13 +4,14 @@ import { Toaster } from 'react-hot-toast';
 import Home from './pages/Home';
 import SignIn from './pages/Signin';
 import SignUp from './pages/Signup';
+import ForgetPassword from './pages/ForgetPassword';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Header from './component/Navbar';
 
 function AppContent() {
   const location = useLocation()
   //tanpa navbar
-  const hideNavbarRoutes = ['/signin', '/signup'];
+  const hideNavbarRoutes = ['/signin', '/signup', '/forget-password'];
 
   return (
     <>
@@ -21,6 +22,7 @@ function AppContent() {
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </>
