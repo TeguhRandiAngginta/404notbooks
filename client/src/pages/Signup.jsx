@@ -11,7 +11,7 @@ import Image from 'react-bootstrap/Image';
 import logo from '../assets/logo/logoWeb.png';
 import img from '../assets/logo/log1.png';
 import { useForm } from 'react-hook-form';
-import './style.css';
+import './style.css'; // Import external CSS
 
 export default function Signup() {
     const {
@@ -27,30 +27,26 @@ export default function Signup() {
     return (
         <Container
             fluid
-            className="d-flex justify-content-center align-items-center"
-            style={{
-                minHeight: '100vh',
-                background: 'linear-gradient(135deg, #d8e9f0, #c3f0c8, #b5a3f3)', // Warna gradien
-                padding: '20px',
-            }}
+            className="d-flex justify-content-center align-items-center signup-container"
         >
             <Card className="p-5 w-75 card">
                 <Row>
-                    {/* Bagian Kiri */}
-                    <Col md={6} className="text-center">
+                    {/* Left Side */}
+                    <Col md={6} className="text-center left-side">
                         <div className="d-flex justify-content-center align-items-center mb-3 mt-3">
                             <Image src={logo} roundedCircle className="logo me-2 mb-2" />
-                            <h3 className='archivo'>Not Books</h3>
+                            <h2 className="mb-1 archivo title-logo title-form align-title">Not Books</h2>
                         </div>
                         <div className="d-flex justify-content-center">
                             <Image src={img} rounded className="log1" />
                         </div>
                     </Col>
 
-                    {/* Bagian Kanan */}
-                    <Col md={6} >
-                        <Form onSubmit={handleSubmit(doSubmit)} className='text-center'>
-                            <h2 className="mb-4 archivo">Daftar Akun 404</h2>
+                    {/* Right Side */}
+                    <Col md={6} className="right-side">
+                        <Form onSubmit={handleSubmit(doSubmit)} className="text-center">
+                            <h2 className="mb-4 archivo title-form align-title">Daftar Akun 404</h2>
+
                             {/* Email Field */}
                             <FloatingLabel controlId="floatingInput" label="Email" className="mb-3">
                                 <Form.Control
@@ -107,8 +103,12 @@ export default function Signup() {
                                 type="checkbox"
                                 id="agreementCheckbox"
                                 label={
-                                    <span className='dm-sans'>
-                                        Saya menyetujui <a href="#" className="link-dark"><b>kebijakan privasi</b></a> 404 Not Books
+                                    <span className="dm-sans">
+                                        Saya menyetujui{' '}
+                                        <a href="privacy-policy" className="link-dark">
+                                            <b>kebijakan privasi</b>
+                                        </a>{' '}
+                                        404 Not Books
                                     </span>
                                 }
                                 className="mb-3"
@@ -126,7 +126,10 @@ export default function Signup() {
                                 {isSubmitting ? 'Loading...' : <strong>Daftar</strong>}
                             </Button>
                             <p className="mt-3 mb-5 dm-sans">
-                                Sudah Punya Akun? <a href="#" className="link-dark"><b>Masuk</b></a>
+                                Sudah Punya Akun?{' '}
+                                <a href="signin" className="link-dark">
+                                    <b>Masuk</b>
+                                </a>
                             </p>
                         </Form>
                     </Col>
