@@ -16,14 +16,16 @@ const users = [
     },
     {
         username: 'Randi',
-        email: 'tengangrandi@gmail.com',
-        password: await bcrypt.hash('randoy17',10),
+        email: 'randi123@gmail.com',
+        password: await bcrypt.hash('randi12345',10),
+        role: 'admin',
         gender: 'pria',
-        boa: '2005-02-05',
+        boa: '2004-10-19',
         address: 'lhokseumawe',
         phone: '081298990861',
     },
 ];
+
 //otomatis memberikan role customer
 users.forEach(user => {
     if (!user.role) {
