@@ -11,6 +11,7 @@ import Image from 'react-bootstrap/Image';
 import logo from '../assets/logo/logoWeb.png';
 import img from '../assets/logo/log1.png';
 import { useForm } from 'react-hook-form';
+import { API_BASE_URL } from '../util.js';
 import './style.css'; // Import external CSS
 
 export default function Signup() {
@@ -20,8 +21,25 @@ export default function Signup() {
         formState: { errors, isSubmitting },
     } = useForm();
 
-    const doSubmit = async () => {
-        toast.success('Sign Up Successful. You are now logged in');
+    const doSubmit = async values => {
+        try {
+            const res = await fetch(`${API_BASE_URL}/auth/signup`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(values),
+            });
+            console.log(values);
+            const data = await res.json();
+            if (res.status === 200) {
+                toast.success('Sign Up Successful. You are now logged in');
+            } else {
+                toast.error(data.message);
+            }
+        } catch (error) {
+            toast.error('Something went wrong');
+        }
     };
 
     return (
